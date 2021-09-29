@@ -13,9 +13,9 @@
   <div id="wrapper">
     <main id="container">
       
-      <label id="link" for="initial-price">Initial Price <input type="number" id="initial-price" placeholder="Enter Initial Price Here"></label>
-      <label id="link" for="stocks-quantity">Quantity Of Stocks <input type="number" id="stocks-quantity" placeholder="Enter the number of Stocks bounght"></label>
-      <label id="link" for="current-price">Current Price <input type="number" id="current-price" placeholder="Enter the current price of the stocks"></label>
+      <label id="link" for="initial-price">Initial Price <input type="number" id="initial-price" min="0" placeholder="Enter Initial Price Here" oninput="validity.valid||(value='');"></label>
+      <label id="link" for="stocks-quantity">Quantity Of Stocks <input type="number" id="stocks-quantity" min="0"  placeholder="Enter the number of Stocks bounght" oninput="validity.valid||(value='');"></label>
+      <label id="link" for="current-price">Current Price <input type="number" id="current-price" placeholder="Enter the current price of the stocks" oninput="validity.valid||(value='');"></label>
       <div>
         <button id="submit-btn">Tell Me!!</button>
       </div>

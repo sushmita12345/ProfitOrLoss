@@ -13,25 +13,29 @@ function submitHandler() {
   if(ip && qty && curr){
   calculateProfitAndLoss(ip, qty, curr);
   } else {
-    showOutput(`Please fill out all the fields🤨`)
+    showOutput(`Please fill out all the fields🤨`);
+    outputBox.style.color = "blue";
   }
 }
 
 function calculateProfitAndLoss(initial, quantity, current) {
   if(initial > current) {
-    var loss = (initial - current) * quantity;
-    var lossPercentage = (loss / initial) * 100;
+    var loss = (Math.abs(initial - current) * quantity);
+    var lossPercentage = ((Math.abs(initial - current)) / initial) * 100;
     var lossAnswer = lossPercentage.toFixed(2);
     showOutput(`Hey the loss is ${loss} and the percentage is ${lossAnswer}%`);
+    outputBox.style.color = "red";
     
   }
   else if (current > initial) {
-      var profit = (current - initial) * quantity;
-      var profitPercentage = (profit / current) * 100;
+      var profit = (Math.abs(current - initial) * quantity);
+      var profitPercentage = ((Math.abs(current - initial)) / initial) * 100;
       var profitAnswer = profitPercentage.toFixed(2);
       showOutput(`Hey the profit is ${profit} and the percentage is ${profitAnswer}%`);
+      outputBox.style.color = "green";
   } else {
     showOutput(`No pain no gain and no gain no pain🙂`);
+    outputBox.style.color = "white";
   }
 }
 
