@@ -13,7 +13,7 @@ function submitHandler() {
   if(ip && qty && curr){
   calculateProfitAndLoss(ip, qty, curr);
   } else {
-    showOutput(`Please fill out all the fields🤨`);
+    showOutput(`Please enter valid number🤨`);
     outputBox.style.color = "blue";
   }
 }
@@ -33,7 +33,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
       var profitAnswer = profitPercentage.toFixed(2);
       showOutput(`Hey the profit is ${profit} and the percentage is ${profitAnswer}%`);
       outputBox.style.color = "green";
-  } else {
+  }  else {
     showOutput(`No pain no gain and no gain no pain🙂`);
     outputBox.style.color = "white";
   }
